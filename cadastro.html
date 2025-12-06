@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            background: #564ac0;
+            border: none;
+            padding: 12px;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #031b5e;
+        }
+        .msg {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Cadastro</h2>
+    <label>Nome </label>
+    <input type="text" id="nome" placeholder="Digite seu nome">
+    <label>data de nacimento </label>
+    <input type="text" id="nome" placeholder="dd /mm /aaaa">
+    <label>email </label>
+    <input type=" text" id="email"placeholder= "Digite seu email">
+    <label>senha </label>
+    <input type=" text" id="email"placeholder= "Digite sua senha">
+    <label>cpf  </label>
+    <input type="password" id="senha" placeholder="Digite seu cpf">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <p class="msg" id="mensagem"></p>
+</div>
+
+<script>
+    function cadastrar() {
+        let nome = document.getElementById('nome').value;
+        let email = document.getElementById('email').value;
+        let senha = document.getElementById('senha').value;
+        let msg = document.getElementById('mensagem');
+
+        if (nome === "" || email === "" || senha === "") {
+            msg.style.color = "red";
+            msg.innerText = "Preencha todos os campos!";
+        } else {
+            msg.style.color = "green";
+            msg.innerText = "Cadastro realizado com sucesso!";
+        }
+    }
+</script>
+
+</body>
+</html>
